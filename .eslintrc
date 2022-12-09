@@ -1,0 +1,43 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "prettier"
+  ],
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "no-console": "warn",
+    "react/prop-types": 0,
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "indent": [
+      "error",
+      2
+    ],
+    "no-unused-expressions": 1,
+    "no-unused-vars": 1,
+    "import/no-unresolved": 1
+  },
+  "overrides": [
+    {
+      "files": [
+        "index.js",
+        "reportWebVitals.js"
+      ],
+      "rules": {
+        "react/jsx-filename-extension": "off"
+      }
+    }
+  ]
+}
