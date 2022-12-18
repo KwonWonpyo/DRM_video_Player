@@ -1,13 +1,14 @@
 import React, { useRef, useEffect } from 'react';
 import ShakaPlayer from 'shaka-player-react';
-import axios from 'axios';
+// import axios from 'axios';
 import 'shaka-player-react/dist/controls.css';
 
 function VideoPlayer() {
   const controllerRef = useRef(null);
 
   useEffect(() => {
-    const { player, ui, videoElement } = controllerRef.current;
+    // eslint-disable-next-line no-unused-vars
+    const { player, ui, videoElement } = controllerRef.current; // FIXME: no-unused-vars
 
     async function loadAsset() {
       player.configure({

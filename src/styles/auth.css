@@ -1,6 +1,6 @@
 .auth_page {
   position: relative;
-  padding: 20px 28px;
+  padding: 31px 28px;
   width: 330px;
   /* height: 600px; */
   border: 1px solid rgb(236, 236, 240);
@@ -97,4 +97,33 @@ input:checked + .keep_text::before {
   font-weight: 700;
   line-height: 24px;
   color: #fff;
+}
+
+.error_text {
+  color: #777;
+}
+
+.social_login_wrapper {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social_login_wrapper .social_login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px;
+  width: 223px;
+  height: 40px;
+  padding: 0;
+  border-radius: 4px;
+  border: solid 1px rgba(0,0,0,.15);
+  background-color: cadetblue;
+  box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: lightgray;
 }

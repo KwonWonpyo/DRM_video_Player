@@ -48,39 +48,59 @@ function Auth() {
       <form onSubmit={onSubmit}>
         <input
           className='input_text_login'
-          name="email"
-          type="text"
-          placeholder="Email"
+          name='email'
+          type='text'
+          placeholder='Email'
           value={email}
           onChange={onChange}
           required
         />
         <input
           className='input_text_login'
-          name="password"
-          type="password"
-          placeholder="Password"
+          name='password'
+          type='password'
+          placeholder='Password'
           value={password}
           onChange={onChange}
           required
         />
-        <div className="login_keep_wrap" id="login_keep_wrap">
-          <div className="keep_check">
-            <input type="checkbox" id="keep" name="nvlong" className="input_keep" value="off"/>
-            <label htmlFor="keep" className="keep_text">로그인 상태 유지</label>
+        <div className='login_keep_wrap' id='login_keep_wrap'>
+          <div className='keep_check'>
+            <input type='checkbox' id='keep' name='nvlong' className='input_keep' value='off'/>
+            <label htmlFor='keep' className='keep_text'>로그인 상태 유지</label>
           </div>
         </div>
-        <div className="btn_login_wrap">
-          <button type="submit" className="btn_login" id="log.login">
-            <span className="btn_text">{newAccount ? '새 계정 생성' : '로그인'}</span>
+        <div className='btn_login_wrap'>
+          <button type='submit' className='btn_login' id='log.login'>
+            <span className='btn_text'>{newAccount ? '새 계정 생성' : '로그인'}</span>
           </button>
         </div>
-        {errorMessage}
+        <div className='error_text'>
+          {errorMessage}
+        </div>
       </form>
       {/* <span onClick={toggleAccount}>{newAccount ? 'Login' : 'Create'} </span> */}
-      <div>
-        <button type="button">Continue with Google</button>
-        <button type="button">Continue with GitHub</button>
+      <div className='social_login_wrapper'>
+        <button className='social_login' type='button' style={{backgroundColor: 'white'}}>
+          <div style={{
+            display: 'inline-block',
+            width: '24px',
+            height: '24px',
+            marginRight: '12px',
+            backgroundImage: 'url(https://ssl.pstatic.net/static/nid/login/m_sp_01_login_008d5216.png)'
+          }}/>
+          Google 계정으로 로그인
+        </button>
+        <button className='social_login' type='button' style={{backgroundColor: 'lightgray'}}>
+          <div style={{
+            display: 'inline-block',
+            width: '24px',
+            height: '24px',
+            marginRight: '12px',
+            backgroundImage: 'url(https://ssl.pstatic.net/static/nid/login/m_sp_01_login_008d5216.png)'
+          }}/>
+          GitHub 계정으로 로그인
+        </button>
       </div>
     </div>
   );

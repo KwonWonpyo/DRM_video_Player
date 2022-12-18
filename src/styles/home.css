@@ -1,0 +1,20 @@
+.home_background {
+  background-color: white;
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+.video_list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 6px 30px;
+  justify-content: center;
+}
+
+.video_list .video_list_title {
+  position: absolute;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  top: 55px;
+}
