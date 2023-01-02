@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import PageRouter from 'components/PageRouter';
+import Header from 'components/Header';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import initApp from '../firebase';
 import 'styles/app.css';
@@ -13,7 +14,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(auth.currentUser);
 
   useEffect(() => {
-    auth.onAuthStateChanged((user) => {
+    auth.onAuthStateChanged(user => {
       if (user) {
         setIsLoggedIn(true);
       } else {
@@ -31,15 +32,13 @@ function App() {
   );
 
   return (
-    <div className='drm_player_app'>
-      <header className='app_header'/>
-      <div className='page_container'>
+    <div className="drm_player_app">
+      <Header />
+      <div className="page_container">
         {init ? <PageRouter isLoggedIn={isLoggedIn} /> : '서버를 불러오는 중입니다...'}
       </div>
-      <footer className='app_footer'>
-        <div className='copyright'>
-          &copy;copyright 2022, DRM Player by 권원표, 김두희
-        </div>
+      <footer className="app_footer">
+        <div className="copyright">&copy;copyright 2023, DRM Player by 권원표, 김두희</div>
       </footer>
     </div>
   );

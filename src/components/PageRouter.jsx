@@ -8,8 +8,8 @@ function PageRouter({ isLoggedIn }) {
   return (
     <BrowserRouter>
       <Routes>
-        {isLoggedIn ? <Route path='/' element={<Home />} /> : <Route path='/' element={<Auth />} />}
-        <Route path='/videoplayer/:id' element={<VideoPlayer />} />
+        {isLoggedIn ? <Route path="/" element={<Home />} /> : <Route path="/" element={<Auth />} />}
+        <Route path="/videoplayer/:id" element={<VideoPlayer />} />
       </Routes>
     </BrowserRouter>
   );

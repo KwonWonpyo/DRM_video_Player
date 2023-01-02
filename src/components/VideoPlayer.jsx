@@ -9,18 +9,18 @@ const STREAMS = [
   {
     id: 1,
     name: 'Angel One MPEG-DASH',
-    src: 'https://storage.googleapis.com/shaka-demo-assets/angel-one/dash.mpd'
+    src: 'https://storage.googleapis.com/shaka-demo-assets/angel-one/dash.mpd',
   },
   {
     id: 2,
     name: 'Big Buck Bunny HLS',
-    src: 'https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8'
+    src: 'https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8',
   },
   {
     id: 3,
     name: '웬 이상한 테스트 영상',
-    src: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8'
-  }
+    src: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8',
+  },
 ];
 
 function VideoPlayer() {
@@ -29,7 +29,7 @@ function VideoPlayer() {
   const { id } = useParams();
 
   // 서버에 요청해서 정보 가져오기
-  const { src } = STREAMS[id-1];
+  const { src } = STREAMS[id - 1];
 
   React.useEffect(() => {
     window.getShakaInst = () => ref.current;

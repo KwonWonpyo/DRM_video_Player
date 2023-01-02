@@ -14,7 +14,7 @@
   height: 35px;
   padding: 0 15px;
   margin-bottom: 2px;
-  border: 1px solid #D0CCC7;
+  border: 1px solid #d0ccc7;
   border-radius: 4px;
   color: black;
   line-height: 18px;
@@ -86,7 +86,7 @@ input:checked + .keep_text::before {
   width: 100%;
   padding: 13px 0 13px;
   border-radius: 6px;
-  border: solid 1px rgba(0,0,0,.15);
+  border: solid 1px rgba(0, 0, 0, 0.15);
   background-color: #3c48e9;
   box-sizing: border-box;
 }
@@ -121,7 +121,7 @@ input:checked + .keep_text::before {
   height: 30px;
   padding: 0;
   border-radius: 6px;
-  border: solid 1px rgba(0,0,0,0.15);
+  border: solid 1px rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
 }
 

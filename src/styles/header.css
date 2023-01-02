@@ -1,0 +1,63 @@
+.app_header {
+  width: 100%;
+  height: 56px;
+  box-sizing: border-box;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#start,
+#center,
+#end {
+  display: flex;
+  align-items: center;
+}
+
+#menu {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  margin-right: 10px;
+  background-color: white;
+}
+
+#menu:hover {
+  background-color: #ccc;
+}
+
+#menu:active {
+  background-color: #bbb;
+}
+
+#center {
+  width: 60%;
+}
+
+#search_form {
+  margin: 0 0 0 40px;
+  padding: 0 4px;
+  width: 100%;
+}
+
+#search_text {
+  height: 40px;
+  border: #ccc solid 1px;
+  border-radius: 20px;
+  display: flex;
+}
+
+#search_text:focus-within {
+  border: black solid 1px;
+}
+
+#search_text input {
+  border: none;
+  padding: 0;
+  margin: 0 10px 0 16px;
+  width: 85%;
+  outline: none;
+}
