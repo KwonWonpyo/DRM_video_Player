@@ -1,7 +1,15 @@
 .thumbnail {
+  display: grid;
+  justify-content: center;
   width: 300px;
   height: 300px;
-  margin: 10px;
+  color: black;
+  text-decoration: none;
+}
+
+.thumbnail img {
+  width: 250px;
+  height: 250px;
   background-color: rgb(237, 237, 237);
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0);
