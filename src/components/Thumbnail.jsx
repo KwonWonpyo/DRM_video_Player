@@ -1,14 +1,16 @@
 import React from 'react';
 import 'styles/thumbnail.css';
 
-function Thumbnail(info) {
-  const { video } = info;
-  const { id, name, thumbnail, src } = video;
+function Thumbnail(content) {
+  const { thumbnail, title, uploadedDate, uploader, videoId } = content;
 
   return (
-    <a className="thumbnail" href={`/videoplayer/${id}`}>
-      <img src="/logo512.png" alt="동영상 대표 이미지" />
-      <span>{name}</span>
+    <a className="thumbnail" href={`/videoplayer/${videoId}`}>
+      <img src={thumbnail} alt={title} />
+      <span>{title}</span>
+      <span>{uploadedDate}</span>
+      <span>{uploader}</span>
+      <span>{videoId}</span>
     </a>
   );
 }

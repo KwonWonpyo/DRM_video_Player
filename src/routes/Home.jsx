@@ -1,6 +1,7 @@
 import React from 'react';
 import VideoPlayer from 'components/VideoPlayer';
 import Thumbnail from 'components/Thumbnail';
+import { listVideos } from 'serverAPI';
 import 'styles/home.css';
 
 const STREAMS = [
@@ -51,18 +52,20 @@ const STREAMS = [
   },
 ];
 
-function Home() {
+async function Home() {
   // TODO: 20개씩 끊어서 로딩
   // TODO: onScroll 시에 추가로 더 가져오기
-  const array = STREAMS;
+  const vidoeList = await listVideos();
 
-  const vidoeList = array.map(video => <Thumbnail video={video} />);
+  const { content, pageable, totalPages, totalElements, last, number, sort, size, numberOfElements, first, empty } = vidoeList;
+
+  const thumbnailList = content.map(video => <Thumbnail video={video} />);
 
   return (
     <div className="home_background">
       <div className="video_list">
         <div className="video_list_title">업로드된 동영상</div>
-        {vidoeList}
+        {thumbnailList}
       </div>
       <div className="video_player">{VideoPlayer}</div>
     </div>

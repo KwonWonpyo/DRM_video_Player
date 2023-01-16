@@ -18,7 +18,7 @@ function App() {
       if (user) {
         setIsLoggedIn(true);
       } else {
-        setIsLoggedIn(false);
+        setIsLoggedIn(true);
       }
       setInit(true);
     });
