@@ -9,7 +9,9 @@ function PageRouter({ isLoggedIn }) {
     <BrowserRouter>
       <Routes>
         {isLoggedIn ? <Route path="/" element={<Home />} /> : <Route path="/" element={<Auth />} />}
-        <Route path="/videoplayer/:id" element={<VideoPlayer />} />
+        <Route path="/authtest" element={<Auth />} />
+        <Route path="/hometest" element={<Home />} />
+        {/* <Route path="/videoplayer/:id" element={<VideoPlayer />} /> */}
       </Routes>
     </BrowserRouter>
   );

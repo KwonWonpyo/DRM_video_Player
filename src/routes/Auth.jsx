@@ -7,6 +7,7 @@ function Auth() {
   const [username, setUsername] = useState('ut elit');
   const [password, setPassword] = useState('mollit est in');
   const [errorMessage, setErrorMessage] = useState('');
+  const [loginKeep, setLoginKeep] = useState(true);
 
   const onChange = event => {
     const {
@@ -35,11 +36,22 @@ function Auth() {
     try {
       const user = await userLogIn(username, password);
       console.log(user.token);
+
+      if (loginKeep) {
+        localStorage.setItem('drm_cur_user', username);
+      } else {
+        sessionStorage.setItem('drm_cur_user', username);
+      }
+        
     } catch (error) {
       console.log(error);
       setErrorMessage(error.message);
     }
   };
+
+  const onLoginKeep = event => {
+    setLoginKeep(event.target.checked);
+  }
 
   return (
     <div className="auth_page">
@@ -67,7 +79,7 @@ function Auth() {
         />
         <div className="login_keep_wrap" id="login_keep_wrap">
           <div className="keep_check">
-            <input type="checkbox" id="keep" name="nvlong" className="input_keep" value="off" />
+            <input type="checkbox" id="keep" name="keep" className="input_keep" onClick={onLoginKeep} checked={loginKeep}/>
             <label htmlFor="keep" className="keep_text">
               로그인 상태 유지
             </label>

@@ -11,17 +11,27 @@ function App() {
   const auth = getAuth(); // 로그인된 계정 정보
 
   const [init, setInit] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(auth.currentUser);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  window.onstorage = event => {
+    if (event.key !== 'drm_cur_user') return;
+
+    if (sessionStorage.getItem('drm_cur_user') || localStorage.getItem('drm_cur_user')) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+
+    console.log('onstorage called');
+  }
 
   useEffect(() => {
-    auth.onAuthStateChanged(user => {
-      if (user) {
-        setIsLoggedIn(true);
-      } else {
-        setIsLoggedIn(true);
-      }
-      setInit(true);
-    });
+    if (sessionStorage.getItem('drm_cur_user') || localStorage.getItem('drm_cur_user')) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+    setInit(true);
   }, []);
 
   // 로딩이 너무 빨라서 나중에 꾸며도 될 듯

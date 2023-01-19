@@ -52,14 +52,28 @@ const STREAMS = [
   },
 ];
 
-async function Home() {
+function Home() {
   // TODO: 20개씩 끊어서 로딩
   // TODO: onScroll 시에 추가로 더 가져오기
-  const vidoeList = await listVideos();
 
-  const { content, pageable, totalPages, totalElements, last, number, sort, size, numberOfElements, first, empty } = vidoeList;
+  let thumbnailList = [];
+  const onLoading = async event => {
+    const vidoeList = await listVideos();
+  
+    const { content, pageable, totalPages, totalElements, last, number, sort, size, numberOfElements, first, empty } = vidoeList;
+  
+    // content.forEach(video => {
+    //   thumbnailList.push(<Thumbnail video={video} />);
+    // });
+    // STREAMS.forEach(video => {
+    //   thumbnailList.push(<Thumbnail video={video} />);
+    // });
+    thumbnailList = content.map(video => <Thumbnail video={video} />);
+  }
+  
+  // const thumbnailList = STREAMS.map(video => <Thumbnail video={video} />);
 
-  const thumbnailList = content.map(video => <Thumbnail video={video} />);
+  onLoading();
 
   return (
     <div className="home_background">
