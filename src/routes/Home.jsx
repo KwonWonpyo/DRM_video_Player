@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import VideoPlayer from 'components/VideoPlayer';
 import Thumbnail from 'components/Thumbnail';
 import { listVideos } from 'serverAPI';
@@ -55,33 +55,29 @@ const STREAMS = [
 function Home() {
   // TODO: 20개씩 끊어서 로딩
   // TODO: onScroll 시에 추가로 더 가져오기
+  const [load, setLoad] = useState(false);
 
-  let thumbnailList = [];
-  const onLoading = async event => {
-    const vidoeList = await listVideos();
-  
-    const { content, pageable, totalPages, totalElements, last, number, sort, size, numberOfElements, first, empty } = vidoeList;
-  
-    // content.forEach(video => {
-    //   thumbnailList.push(<Thumbnail video={video} />);
-    // });
-    // STREAMS.forEach(video => {
-    //   thumbnailList.push(<Thumbnail video={video} />);
-    // });
-    thumbnailList = content.map(video => <Thumbnail video={video} />);
-  }
-  
-  // const thumbnailList = STREAMS.map(video => <Thumbnail video={video} />);
+  const thumbnails = [];
 
-  onLoading();
+  useEffect(() => {
+    async function loadThumbnails() {
+      // You can await here
+      const vidoeList = await listVideos();
+      const { content, pageable, totalPages, totalElements, last, number, sort, size, numberOfElements, first, empty } = vidoeList;
+      content.forEach(info => thumbnails.push(<Thumbnail info={info} />));
+      // ...
+      setLoad(true);
+    }
+    loadThumbnails();
+  }, []); // Or [] if effect doesn't need props or state
 
   return (
     <div className="home_background">
       <div className="video_list">
         <div className="video_list_title">업로드된 동영상</div>
-        {thumbnailList}
+        {thumbnails}
       </div>
-      <div className="video_player">{VideoPlayer}</div>
+      {/* <div className="video_player">{VideoPlayer}</div> */}
     </div>
   );
 }

@@ -1,8 +1,9 @@
 import React from 'react';
 import 'styles/thumbnail.css';
 
-function Thumbnail(content) {
-  const { thumbnail, title, uploadedDate, uploader, videoId } = content;
+function Thumbnail(props) {
+  const { info } = props;
+  const { thumbnail, title, uploadedDate, uploader, videoId } = props;
 
   return (
     <a className="thumbnail" href={`/videoplayer/${videoId}`}>
