@@ -19,18 +19,6 @@ function Auth() {
       setPassword(value);
     }
   };
-  const onSignUp = async event => {
-    event.preventDefault();
-    try {
-      // create acoount and also log in automatically
-      const accountLoggedIn = await userSignUp(username, password, 'nick');
-      console.log(accountLoggedIn);
-    } catch (error) {
-      console.log(error);
-      setErrorMessage(error.message);
-    }
-  };
-
   const onLogin = async event => {
     event.preventDefault();
     try {
@@ -42,7 +30,22 @@ function Auth() {
       } else {
         sessionStorage.setItem('drm_cur_user', username);
       }
-        
+      // eslint-disable-next-line no-restricted-globals
+      location.replace('/');
+    } catch (error) {
+      console.log(error);
+      setErrorMessage(error.message);
+    }
+  };
+  const onSignUp = async event => {
+    event.preventDefault();
+    try {
+      // create acoount and also log in automatically
+      const accountLoggedIn = await userSignUp(username, password, 'nick');
+      console.log(accountLoggedIn);
+
+      alert('계정이 생성되었습니다.');
+      onLogin(event);
     } catch (error) {
       console.log(error);
       setErrorMessage(error.message);
