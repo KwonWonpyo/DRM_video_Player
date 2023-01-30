@@ -5,7 +5,7 @@ function Header() {
   return (
     <header className="app_header">
       <div id="start">
-        <button type="button" id="menu">
+        {/* <button type="button" id="menu">
           <menu-icon id="guide-icon" icon="yt-icons:menu">
             <svg
               viewBox="0 0 24 24"
@@ -18,8 +18,10 @@ function Header() {
               </g>
             </svg>
           </menu-icon>
-        </button>
-        <a href="/">Home</a>
+        </button> */}
+        <a href="/" id="home_btn">
+          <img src="/DRM_PLAYER_LOGO.png" alt="DRM PLAYER" />
+        </a>
       </div>
       <div id="center">
         <form id="search_form">
@@ -29,8 +31,15 @@ function Header() {
         </form>
       </div>
       <div id="end">
-        <button type="button">설정</button>
-        <button type="button">profile</button>
+        <button className="btn_right_menu" type="button">
+          Setting
+        </button>
+        <button className="btn_right_menu" type="button">
+          Profile
+        </button>
+        <button id="btn_upload" type="button">
+          Upload
+        </button>
       </div>
     </header>
   );

@@ -5,7 +5,6 @@
   align-items: center;
   box-sizing: border-box;
   padding: 0;
-  height: 100vh;
   min-height: 700px;
   background-color: white;
 }
@@ -13,7 +12,7 @@
 .page_container {
   width: auto;
   height: auto;
-  margin: auto;
+  margin: 60px 0 0 0;
 }
 
 .app_footer {

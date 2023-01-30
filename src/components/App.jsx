@@ -18,7 +18,7 @@ function App() {
     }
 
     console.log('onstorage called');
-  }
+  };
 
   useEffect(() => {
     if (sessionStorage.getItem('drm_cur_user') || localStorage.getItem('drm_cur_user')) {

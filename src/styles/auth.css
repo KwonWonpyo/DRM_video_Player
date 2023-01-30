@@ -83,7 +83,7 @@
   background-size: 266px 225px;
 }
 
-input:checked+.keep_text::before {
+input:checked + .keep_text::before {
   background-position: -244px -167px;
 }
 

@@ -13,7 +13,19 @@ function Home() {
     async function loadThumbnails() {
       // You can await here
       const vidoeList = await listVideos();
-      const { content, pageable, totalPages, totalElements, last, number, sort, size, numberOfElements, first, empty } = vidoeList;
+      const {
+        content,
+        pageable,
+        totalPages,
+        totalElements,
+        last,
+        number,
+        sort,
+        size,
+        numberOfElements,
+        first,
+        empty,
+      } = vidoeList;
       const thumbnailssss = content.map(info => <Thumbnail key={info.videoId} info={info} />);
       setThumbnails(thumbnailssss);
       // ...
@@ -28,10 +40,28 @@ function Home() {
 
   return (
     <div className="home_background">
-      <div className="video_list">
-        <div className="video_list_title">업로드된 동영상</div>
-        {load ? thumbnails : '불러오는 중입니다.'}
+      <div id="banner">
+        <h1>Banner</h1>
       </div>
+      <div className="video_list_title">업로드된 동영상</div>
+      <div className="tag_container">
+        <div className="tag">
+          <span>Education</span>
+        </div>
+        <div className="tag">
+          <span>Movie</span>
+        </div>
+        <div className="tag">
+          <span>Animation</span>
+        </div>
+        <div className="tag">
+          <span>Life</span>
+        </div>
+        <div className="tag">
+          <span>Landscape</span>
+        </div>
+      </div>
+      <div className="video_list">{load ? thumbnails : '불러오는 중입니다.'}</div>
     </div>
   );
 }

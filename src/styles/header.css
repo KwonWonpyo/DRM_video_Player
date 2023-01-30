@@ -1,12 +1,15 @@
 .app_header {
   width: 100%;
-  height: 56px;
   box-sizing: border-box;
   padding: 0 16px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  background-color: white;
+  z-index: 3;
 }
 
 #start,
@@ -16,6 +19,12 @@
   align-items: center;
 }
 
+#home_btn {
+  height: 41px;
+  padding: 5px;
+  margin-left: 25px;
+}
+
 #menu {
   width: 40px;
   height: 40px;
@@ -23,6 +32,7 @@
   border-radius: 20px;
   margin-right: 10px;
   background-color: white;
+  cursor: pointer;
 }
 
 #menu:hover {
@@ -35,6 +45,12 @@
 
 #center {
   width: 60%;
+}
+
+@media screen and (max-width: 700px) {
+  #center {
+    display: none;
+  }
 }
 
 #search_form {
@@ -60,4 +76,44 @@
   margin: 0 10px 0 16px;
   width: 85%;
   outline: none;
+}
+
+.btn_right_menu {
+  width: 70px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: white;
+  border: none;
+  margin: 0 5px 0 10px;
+  color: rgb(102, 102, 102);
+  font-size: 15px;
+  font-weight: 500;
+  font-family: 'Arial Narrow Bold', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in 0s;
+}
+
+.btn_right_menu:hover {
+  border: 1px solid #ccc;
+  background-color: rgb(209, 209, 209);
+  color: black;
+}
+
+#btn_upload {
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #00ab6b;
+  border: none;
+  margin: 0 5px 0 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: 'Arial Narrow Bold', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in 0s;
+}
+
+#btn_upload:hover {
+  background-color: #00cc81;
 }

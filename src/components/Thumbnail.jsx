@@ -11,7 +11,7 @@ function Thumbnail(props) {
       <span>{title}</span>
       <span>{uploadedDate}</span>
       <span>{uploader}</span>
-      <span>{videoId}</span>
+      {/* <span>{videoId}</span> */}
     </a>
   );
 }
