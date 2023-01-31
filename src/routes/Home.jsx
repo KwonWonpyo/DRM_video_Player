@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Thumbnail from 'components/Thumbnail';
 import { listVideos } from 'serverAPI';
+import Thumbnail from './Thumbnail';
 import 'styles/home.css';
 
 function Home() {
@@ -41,7 +41,7 @@ function Home() {
   return (
     <div className="home_background">
       <div id="banner">
-        <h1>Banner</h1>
+        <div id="banner_img" />
       </div>
       <div className="video_list_title">업로드된 동영상</div>
       <div className="tag_container">

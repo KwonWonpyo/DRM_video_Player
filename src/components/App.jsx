@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import PageRouter from 'components/PageRouter';
@@ -7,6 +9,7 @@ import 'styles/app.css';
 function App() {
   const [init, setInit] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [collapsed, setCollapsed] = useState(false);
 
   window.onstorage = event => {
     if (event.key !== 'drm_cur_user') return;
@@ -36,9 +39,15 @@ function App() {
     </div>
   );
 
+  const handleScroll = event => {
+    const targetWidth = event.target.clientWidth;
+    if (targetWidth < 500) setCollapsed(true);
+    else setCollapsed(false);
+  }
+
   return (
-    <div className="drm_player_app">
-      <Header />
+    <div className="drm_player_app" onWheel={handleScroll} >
+      <Header collapsed={collapsed} />
       <div className="page_container">
         {init ? <PageRouter isLoggedIn={isLoggedIn} /> : '서버를 불러오는 중입니다...'}
       </div>

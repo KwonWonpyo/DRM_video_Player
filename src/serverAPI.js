@@ -1,4 +1,6 @@
-const baseURL = 'http://kdoit.tplinkdns.com:1106';
+import config from './config.json';
+
+const baseURL = config.SERVER_ADDRESS;
 
 /**
  * ClearKey DRM media server API List

@@ -27,8 +27,10 @@ function Auth() {
 
       if (loginKeep) {
         localStorage.setItem('drm_cur_user', username);
+        sessionStorage.setItem('authToken', user.token);
       } else {
         sessionStorage.setItem('drm_cur_user', username);
+        sessionStorage.setItem('authToken', user.token);
       }
       // eslint-disable-next-line no-restricted-globals
       location.replace('/');

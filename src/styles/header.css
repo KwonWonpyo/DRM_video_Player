@@ -12,9 +12,15 @@
   z-index: 3;
 }
 
-#start,
+@media screen and (min-width: 1800px) {
+  .app_header {
+    width: 1800px;
+  }
+}
+
+#left,
 #center,
-#end {
+#right {
   display: flex;
   align-items: center;
 }
