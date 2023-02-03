@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import 'styles/header.css';
 
 function Header(prop) {
   const { collapsed } = prop;
 
   return (
-    <header className="app_header">
+    <header className="app_header" id="app_header">
       <div id="left">
         <a href="/" id="home_btn">
           <img src="/DRM_PLAYER_LOGO.png" alt="DRM PLAYER" />

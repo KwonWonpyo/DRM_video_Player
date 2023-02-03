@@ -40,13 +40,15 @@ function App() {
   );
 
   const handleScroll = event => {
-    const targetWidth = event.target.clientWidth;
-    if (targetWidth < 500) setCollapsed(true);
+    const headerComponent = document.getElementById('app_header');
+    if (!headerComponent) return;
+
+    if (headerComponent.clientWidth < 500) setCollapsed(true);
     else setCollapsed(false);
   }
 
   return (
-    <div className="drm_player_app" onWheel={handleScroll} >
+    <div className="drm_player_app" onMouseMove={handleScroll} onScroll={handleScroll}>
       <Header collapsed={collapsed} />
       <div className="page_container">
         {init ? <PageRouter isLoggedIn={isLoggedIn} /> : '서버를 불러오는 중입니다...'}
