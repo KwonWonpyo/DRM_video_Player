@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/DRM_video_Player/static/css/main.d17b14a8.css",
-    "main.js": "/DRM_video_Player/static/js/main.8e6980b2.js",
+    "main.js": "/DRM_video_Player/static/js/main.773a9083.js",
     "static/media/SpiderMan.jpg": "/DRM_video_Player/static/media/SpiderMan.1b57e66a350ffa7db1a6.jpg",
     "index.html": "/DRM_video_Player/index.html",
     "main.d17b14a8.css.map": "/DRM_video_Player/static/css/main.d17b14a8.css.map",
-    "main.8e6980b2.js.map": "/DRM_video_Player/static/js/main.8e6980b2.js.map"
+    "main.773a9083.js.map": "/DRM_video_Player/static/js/main.773a9083.js.map"
   },
   "entrypoints": [
     "static/css/main.d17b14a8.css",
-    "static/js/main.8e6980b2.js"
+    "static/js/main.773a9083.js"
   ]
 }
