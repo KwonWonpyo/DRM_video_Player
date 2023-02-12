@@ -45,7 +45,7 @@ function App() {
 
     if (headerComponent.clientWidth < 500) setCollapsed(true);
     else setCollapsed(false);
-  }
+  };
 
   return (
     <div className="drm_player_app" onMouseMove={handleScroll} onScroll={handleScroll}>

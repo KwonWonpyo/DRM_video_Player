@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { userLogIn, userSignUp } from '../serverAPI';
 import 'styles/auth.css';
 
+const { PUBLIC_URL } = process.env; // set automatically from package.json:homepage
+
 function Auth() {
   const [username, setUsername] = useState('ut elit');
   const [password, setPassword] = useState('mollit est in');
@@ -148,7 +150,11 @@ function Auth() {
           </svg>
         </button>
         <button className="btn_social_login" type="button" style={{ backgroundColor: '#03C75A' }}>
-          <img className="btn_social_login--logo" src="./btnG_icon.png" alt="naver_logo" />
+          <img
+            className="btn_social_login--logo"
+            src={`${PUBLIC_URL}/btnG_icon.png`}
+            alt="naver_logo"
+          />
         </button>
         <button className="btn_social_login" type="button" style={{ backgroundColor: '#ffeb00' }}>
           <svg

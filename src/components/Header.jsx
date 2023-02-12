@@ -1,6 +1,8 @@
 import React from 'react';
 import 'styles/header.css';
 
+const { PUBLIC_URL } = process.env; // set automatically from package.json:homepage
+
 function Header(prop) {
   const { collapsed } = prop;
 
@@ -8,7 +10,7 @@ function Header(prop) {
     <header className="app_header" id="app_header">
       <div id="left">
         <a href="/" id="home_btn">
-          <img src="/DRM_PLAYER_LOGO.png" alt="DRM PLAYER" />
+          <img src={`${PUBLIC_URL}/DRM_PLAYER_LOGO.png`} alt="DRM PLAYER" />
         </a>
       </div>
       <div id="center">
@@ -19,8 +21,8 @@ function Header(prop) {
         </form>
       </div>
       <div id="right">
-        {
-          collapsed ? <button type="button" id="menu">
+        {collapsed ? (
+          <button type="button" id="menu">
             <menu-icon id="guide-icon" icon="yt-icons:menu">
               <svg
                 viewBox="0 0 24 24"
@@ -33,7 +35,9 @@ function Header(prop) {
                 </g>
               </svg>
             </menu-icon>
-          </button> : <>
+          </button>
+        ) : (
+          <>
             <button className="btn_right_menu" type="button">
               Setting
             </button>
@@ -44,7 +48,7 @@ function Header(prop) {
               Upload
             </button>
           </>
-        }
+        )}
       </div>
     </header>
   );

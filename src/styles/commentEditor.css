@@ -1,0 +1,81 @@
+.cmt_editor {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 10px;
+  width: 1200px;
+}
+
+#cmt_placeholder {
+  position: absolute;
+  pointer-events: none;
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+  background-color: white;
+  border: none;
+}
+
+#cmt_input {
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+  border: none;
+  border-bottom: 1.5px solid #aaa;
+  background-color: transparent;
+  outline: none;
+}
+
+#cmt_input:focus-within {
+  border-bottom: 1.5px solid #333;
+}
+
+.cmt_editor_action {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  height: 40px;
+}
+
+.cmt_submit {
+  width: 54px;
+  height: 32px;
+  border-radius: 16px;
+  background-color: #065fd4;
+  border: none;
+  margin: 0 5px 0 10px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  color: white;
+}
+
+.cmt_submit:disabled {
+  cursor: auto;
+  background-color: rgb(226, 226, 226);
+  color: #747474;
+}
+
+.cmt_submit:active {
+  background-color: #cde1ff;
+}
+
+.cmt_cancel {
+  width: 54px;
+  height: 32px;
+  border-radius: 16px;
+  border: none;
+  margin: 0 5px 0 10px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+
+.cmt_cancel:hover {
+  background-color: rgb(220, 220, 220);
+}
+
+.cmt_cancel:active {
+  background-color: rgb(200, 200, 200);
+}

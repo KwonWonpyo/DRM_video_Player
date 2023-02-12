@@ -103,3 +103,19 @@ export async function listVideos(keyword = '', page = 0, uploaderId = '') {
   const result = await response.json();
   return result;
 }
+
+export async function listAllComments(page, videoId) {
+  const response = await fetch(`${baseURL}/comments/list?page=${page}&videoId=${videoId}`, {
+    method: 'GET',
+    mode: 'cors',
+    headers: {
+      Accept: '*/*',
+    },
+  });
+  if (response.status !== 200) {
+    console.error('Error', response.status, response.statusText);
+    throw new Error('댓글 목록을 불러올 수 없습니다.');
+  }
+  const result = await response.json();
+  return result;
+}

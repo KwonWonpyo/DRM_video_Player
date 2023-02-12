@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { listVideos } from 'serverAPI';
-import Thumbnail from './Thumbnail';
+import Thumbnail from '../components/Thumbnail';
 import 'styles/home.css';
 
 function Home() {
@@ -26,8 +26,8 @@ function Home() {
         first,
         empty,
       } = vidoeList;
-      const thumbnailssss = content.map(info => <Thumbnail key={info.videoId} info={info} />);
-      setThumbnails(thumbnailssss);
+      const thumbnailList = content.map(info => <Thumbnail key={info.videoId} info={info} />);
+      setThumbnails(thumbnailList);
       // ...
       setLoad(true);
     }
